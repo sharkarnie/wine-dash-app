@@ -108,7 +108,7 @@ def update_graph(wine_type, x_axis, y_axis):
         <b>y = {mdl.coef_[0]:0.2f}*x + {mdl.intercept_:0.2f}</b>
         <br />
         <b>r<sup>2</sup> = {r_sq:0.2f}</b>"""
-        
+
     return {
         'data': [
             go.Scatter(x=data_x, y=data_y,
@@ -128,8 +128,8 @@ def update_graph(wine_type, x_axis, y_axis):
             ],
         'layout': {
                     'height': 600,
-                    'xaxis': {'title': x_axis.replace('_', ' ').title()},
-                    'yaxis': {'title': y_axis.replace('_', ' ').title()},
+                    'xaxis': {'title': x_axis.replace('_', ' ').title() if x_axis != 'pH' else x_axis},
+                    'yaxis': {'title': y_axis.replace('_', ' ').title() if y_axis != 'pH' else y_axis},
                     #'margin': {'l': 40, 'b': 40, 't': 10, 'r': 10},
                     # legend={'x': 0, 'y': 1},
                     'showlegend': False,
